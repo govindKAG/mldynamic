@@ -1,4 +1,8 @@
 from sklearn.feature_extraction.text import CountVectorizer
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--testcases", help="display a square of a given number")
+args = parser.parse_args()
 data = []
 data_labels = []
 with open("./pos_tweets.txt") as f:
@@ -50,7 +54,8 @@ feat = vectorizer.transform(['"this is a really good sentence, i love it."'])
 print(feat)
 prediction = log_model.predict(feat)
 print(prediction[0])
+print('the dynamic number of test cases passed is ', args.testcases)
 #############
 from sklearn.externals import joblib
-joblib.dump(log_model, '/data/mymodel.pkl')
-joblib.dump(vectorizer, '/data/vect.pkl')
+joblib.dump(log_model, '/data/ntdmymodel.pkl')
+joblib.dump(vectorizer, '/data/ntdvect.pkl')
