@@ -1,3 +1,0 @@
-testcases:10
-mytest:this movie is amazing 
-message:dynamic params
